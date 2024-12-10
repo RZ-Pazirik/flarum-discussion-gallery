@@ -79,7 +79,7 @@ function galleryButton() {
 function imageXHR(id, limit) {
     m.request({
         method: "GET",
-        url: "http://localhost/m500/teszt.php",
+        url: "https://m500.pazirikkft.hu/teszt.php",
         async: true,
         withCredentials: true,
         params: {id: id, limit: limit}
