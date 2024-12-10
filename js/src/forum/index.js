@@ -1,6 +1,6 @@
 import { extend } from 'flarum/common/extend';
 import DiscussionPage from 'flarum/forum/components/DiscussionPage';
-
+import {Fancybox} from '@fancyapps/ui';
 
 //init
 var limit = 15;
@@ -17,6 +17,8 @@ extend(DiscussionPage.prototype, 'oninit', function() {
     console.log('init');
 
 });
+
+
 
 
 
@@ -40,7 +42,7 @@ function imageGallery(imageArray) {
     imageArray.forEach(element => {
         mArray.push(
             m("li", {}, [
-                m("a", { href: element }, [
+                m("a", { href: element, class: 'fancybox-ready', 'data-fancybox': 'topic-gallery' }, [
                     m("img", { src: element })
                 ])
             ])
@@ -86,5 +88,11 @@ function imageXHR(id, limit) {
     })
     .then(function(result) {
         gallery = imageGallery(result.data);
+        Fancybox.bind('[data-fancybox="topic-gallery"]', {
+            // Your custom options
+        });
     })
 }
+
+
+//Fancybox.fromNodes();

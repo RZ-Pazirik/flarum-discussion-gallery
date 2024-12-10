@@ -11,5 +11,8 @@
         "dev": "webpack --mode development --watch",
         "build": "webpack --mode production",
         "analyze": "cross-env ANALYZER=true yarn run build"
+    },
+    "dependencies": {
+        "@fancyapps/ui": "^5.0.36"
     }
 }
